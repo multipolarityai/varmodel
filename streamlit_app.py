@@ -11,7 +11,7 @@ fred_api_key = st.secrets["FRED_API_KEY"]
 # Function to fetch data from FRED
 def fetch_data(series_id):
     fred = Fred(api_key=fred_api_key)
-    data = Fred.get_series(series_id)
+    data = fred.get_series(series_id)
     return data
 
 # Function to run VAR model and forecast
