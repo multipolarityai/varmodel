@@ -53,8 +53,8 @@ def main():
     df = df.dropna()
 
     # Forecast GDP using VAR
-    if df.empty:
-        st.write("Please select at least one indicator")
+    if len(df.columns)<2 :
+        st.write("Please select at least two indicators")
     else:
         forecast = var_forecast(df)
         forecast_df = pd.DataFrame(forecast, columns=df.columns)
